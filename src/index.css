@@ -1,13 +1,188 @@
-body {
+/* use Inter font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* reset CSS */
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  height: 100vh;
+  transition: all 100ms ease;
+}
+
+.navbar {
+  display: flex;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 4rem;
+  width: auto;
+  transition: all 500ms ease-in-out;
+}
+
+.logo h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.toggler {
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.main {
+  margin: 0 auto;
+  width: 50vw;
+}
+
+.heading {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.main input {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  outline: none;
+  font-size: 1.6rem;
+}
+
+.main input:focus,
+.main input:focus-visible {
+  border: none;
+}
+
+.main .submit {
+  display: block;
+  padding: 1rem 4rem;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  background-color: #52b6d1;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0.3rem 0.7rem rgba(0, 0, 0, 0.3);
+  transition: all 300ms ease;
+}
+
+.main .submit:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.main .submit:active {
+  transform: translateY(0.2rem);
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.todo {
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background-color: #eee;
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.todo .title {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.todo.done .title {
+  text-decoration: line-through;
+}
+
+.todo > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo > div > p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.todo > div > button {
+  padding: 0.3rem 0.7rem;
+  border: none;
+  background-color: #52b6d1;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.todo.done > div > button {
+  background-color: rgb(194, 84, 84);
+}
+
+/* Dark mode styling */
+.App.dark {
+  background-color: #151515;
+  color: white;
+}
+
+.dark .logo img {
+  transform: rotateZ(180deg);
+}
+
+.dark .toggler {
+  color: rgb(245, 164, 59);
+}
+
+.dark .main input {
+  background-color: #363636;
+  color: white;
+}
+
+.dark .todo {
+  background-color: #363636;
+  color: white;
 }
