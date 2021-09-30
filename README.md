@@ -1,6 +1,10 @@
 # Ultimate Guide to setup React Context API with our custom hook [Typescript]
 
-To start working on this project simply run the following in your command line
+![Banner for Ultimate Guide to setup React Context API with our custom hook [Typescript]
+](./src/img/dev.jpg "# Ultimate Guide to setup React Context API with our custom hook [Typescript]
+")
+
+To start working on this project simply run the following commands
 
 ```
 git clone https://github.com/damiisdandy/context-api-typescript.git
