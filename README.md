@@ -7,11 +7,12 @@ git clone https://github.com/damiisdandy/context-api-typescript.git
 //or with the Github CLI
 gh repo clone damiisdandy/context-api-typescript
 
+cd context-api-typescript
+
 yarn
 //or with npm
 npm install
 
-cd context-api-typescript
 ```
 
 This project uses a todo-app to see the context-api in action 💪
