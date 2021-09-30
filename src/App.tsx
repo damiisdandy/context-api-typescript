@@ -18,6 +18,29 @@ function App() {
     });
   };
 
+  const addItem = () => {
+    if (value.length > 0) {
+      dispatch({
+        type: "ADD_TODO",
+        payload: value,
+      });
+      setValue("");
+    }
+  };
+
+  const removeTodo = (idx: number) => {
+    dispatch({
+      type: "REMOVE_TODO",
+      payload: idx,
+    });
+  };
+
+  const markDone = (idx: number) => {
+    dispatch({
+      type: "MARK_AS_DONE",
+      payload: idx,
+    });
+  };
   return (
     <div className={`App ${state.isDark ? "dark" : ""}`}>
       <nav className="navbar">
@@ -36,7 +59,9 @@ function App() {
           onChange={handleChange}
           placeholder="e.g Write a blog post about ReactJs"
         />
-        <button className="submit">Add Item</button>
+        <button onClick={addItem} className="submit">
+          Add Item
+        </button>
         <div className="todos">
           {state.todos
             .sort((a, b) => b.id - a.id)
@@ -48,7 +73,14 @@ function App() {
                 <p className="title">{todo.title}</p>
                 <div>
                   <p>Created on {todo.createdAt.toLocaleDateString("en-US")}</p>
-                  <button className={todo.isCompleted ? "complete" : ""}>
+                  <button
+                    onClick={
+                      todo.isCompleted
+                        ? () => removeTodo(todo.id)
+                        : () => markDone(todo.id)
+                    }
+                    className={todo.isCompleted ? "complete" : ""}
+                  >
                     {todo.isCompleted ? "delete" : "mark as done"}
                   </button>
                 </div>

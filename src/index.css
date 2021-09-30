@@ -58,7 +58,7 @@ html {
 
 .main {
   margin: 0 auto;
-  width: 50vw;
+  width: clamp(30.5rem, 60vw, 50rem);
 }
 
 .heading {
@@ -68,7 +68,7 @@ html {
 
 .main input {
   display: block;
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 2rem;
   padding: 1rem 1.5rem;
